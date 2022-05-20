@@ -1,0 +1,41 @@
+{
+  "name": "guayabot",
+  "version": "2.0.0",
+  "main": "app.ts",
+  "author": "David Urbina",
+  "license": "MIT",
+  "scripts": {
+    "check": "tsc --noEmit",
+    "watch": "yarn run check -- --watch",
+    "build": "yarn run build:types && yarn run build:js",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:js": "babel src --out-dir dist --extensions \".ts\" --source-maps inline",
+    "start": "babel-node -x \".ts\" app.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Diomeh/guayatwo.git"
+  },
+  "keywords": [
+    "bot",
+    "discord",
+    "discord-bot",
+    "guayando"
+  ],
+  "bugs": {
+    "url": "https://github.com/Diomeh/guayatwo/issues"
+  },
+  "homepage": "https://github.com/Diomeh/guayatwo#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.0",
+    "@babel/node": "^7.17.10",
+    "@babel/plugin-proposal-class-properties": "^7.17.12",
+    "@babel/preset-env": "^7.18.0",
+    "@babel/preset-typescript": "^7.17.12",
+    "typescript": "^4.6.4"
+  },
+  "dependencies": {
+    "discord.js": "^13.7.0"
+  }
+}
