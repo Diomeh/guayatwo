@@ -5,9 +5,11 @@
   "author": "David Urbina",
   "license": "MIT",
   "scripts": {
-    "check": "tsc --noEmit",
-    "watch": "yarn run check -- --watch",
-    "build": "yarn run build:types && yarn run build:js",
+    "check": "pnpm check:eslint && pnpm check:tsc",
+    "check:eslint": "pnpm eslint src/**",
+    "check:tsc": "tsc --noEmit",
+    "watch": "pnpm run check:tsc --watch",
+    "build": "pnpm run build:types && pnpm run build:js",
     "build:types": "tsc --emitDeclarationOnly",
     "build:js": "babel src --out-dir dist --extensions \".ts\" --source-maps inline",
     "start": "babel-node -x \".ts\" app.ts"
