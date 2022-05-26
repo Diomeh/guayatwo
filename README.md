@@ -1,3 +1,3 @@
 # guayabot remake
 
-A somewhar useless discord bot. Yet again.
+A somewhat useless discord bot. Yet again.
